@@ -1,5 +1,5 @@
 ## Read CSV file and put into data frame.
-refine <- read.csv("/Users/cavaughan99/Documents/personal stuff/R course/refine_original.csv")
+refine <- read.csv("\..refine_original.csv")
 
 ##install dplyr
 install.packages("dplyr")
