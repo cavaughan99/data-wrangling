@@ -32,7 +32,7 @@ refine_new <- refine %>%
 
 
 ##3: 3: Add product categories
-##You learn that the product codes actually represent the following product categories:
+##product codes represent the following product categories:
 ##p = Smartphone
 ##v = TV
 ##x = Laptop
@@ -50,8 +50,6 @@ refine_3$product_category[refine_3$product_code == "x"] <- "Laptop"
 refine_3$product_category[refine_3$product_code == "q"] <- "Tablet"
 
 ##4: 4: Add full address for geocoding
-##You'd like to view the customer information on a map. In order to do that, 
-##the addresses need to be in a form that can be easily geocoded. 
 ##Create a new column full_address that concatenates the three address fields (address, city, country), separated by commas.
 
 refine_4 <-unite(refine_3, full_address, address:country, sep = ",")
@@ -60,10 +58,7 @@ View(refine_4)
 
 
 
-##5: 5: Create dummy variables for company and product category
-##Both the company name and product category are categorical variables i.e. they take only a fixed set of values. 
-##In order to use them in further analysis you need to create dummy variables. Create dummy binary variables for 
-##each of them with the prefix company_ and product_ i.e.
+##5: Create dummy variables for company and product category
 ##Add four binary (1 or 0) columns for company: company_phillips, company_akzo, company_van_houten and company_unilever
 ##Add four binary (1 or 0) columns for product category: product_smartphone, product_tv, product_laptop and product_tablet
 ##install car package to facilitate creation of binary variables
@@ -87,7 +82,7 @@ refine_5 <- subset(refine_4, select=-company)
 
 refine_6 <- select(refine_5, company_clean:product_number,full_address:product_tablet)
 
-write.csv(refine_6, "/Users/cavaughan99/Documents/personal stuff/R course/refine_clean.csv")
+write.csv(refine_6, "/Users...refine_clean.csv")
 
 
 
